@@ -44,7 +44,7 @@ android {
 
     lint {
         textReport true
-        textOutput file('stdout')
+        textOutput file("$buildDir/reports/lint-results-debug.txt")
         warningsAsErrors false
         abortOnError true
         checkDependencies true

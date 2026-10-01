@@ -41,7 +41,20 @@ jobs:
         run: ./gradlew testDebugUnitTest --stacktrace
 
       - name: Android Lint
+        id: lint
         run: ./gradlew lintDebug --stacktrace
+
+      - name: Publish lint report on failure
+        if: failure() && steps.lint.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          report=app/build/reports/lint-results-debug.txt
+          [ -f "$report" ] || report=$(find app/build/reports -name 'lint-results-debug*' | head -1)
+          body=$(head -c 60000 "$report" 2>/dev/null || echo 'no lint report produced')
+          printf '%s' "$body" > /tmp/body.txt
+          gh api --method POST "repos/${GITHUB_REPOSITORY}/commits/${GITHUB_SHA}/comments" \
+            -f body="$(printf '```\n%s\n```' "$(cat /tmp/body.txt)")"
 
       - name: Build debug APK
         run: ./gradlew assembleDebug --stacktrace
