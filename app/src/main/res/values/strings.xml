@@ -1,5 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">PinBoard Keyboard</string>
-    <string name="ime_name">PinBoard Keyboard</string>
+    <string name="app_name">پین‌بورد</string>
+    <string name="ime_name">کیبورد پین‌بورد</string>
+
+    <string name="search_hint">جستجو در پین‌ها</string>
+    <string name="category">دسته</string>
+    <string name="category_all">همه</string>
+    <string name="category_none">بدون دسته</string>
+    <string name="category_name_hint">مثلاً: کاری، شخصی، پزشکی</string>
+
+    <string name="add_pin">افزودن پین</string>
+    <string name="edit_pin">ویرایش پین</string>
+    <string name="delete_pin">حذف پین</string>
+    <string name="delete_pin_message">«%1$s» حذف شود؟</string>
+    <string name="pin_deleted">«%1$s» حذف شد</string>
+    <string name="pin_title_hint">عنوان پین</string>
+    <string name="pin_content_hint">متن پین</string>
+    <string name="pin_to_top">سنجاق به بالای فهرست</string>
+
+    <string name="manage">مدیریت</string>
+    <string name="manage_categories">مدیریت دسته‌ها</string>
+    <string name="add_category">افزودن دسته</string>
+    <string name="rename_category">تغییر نام دسته</string>
+    <string name="delete_category">حذف دسته</string>
+    <string name="delete_category_message">«%1$s» حذف شود؟ پین‌های آن حذف نمی‌شوند و بدون دسته می‌مانند.</string>
+
+    <string name="sort_title">مرتب‌سازی</string>
+    <string name="sort_recent">جدیدترین</string>
+    <string name="sort_most_used">پرکاربردترین</string>
+    <string name="sort_alphabetical">الفبایی</string>
+
+    <string name="action_pin">سنجاق کردن</string>
+    <string name="action_unpin">برداشتن سنجاق</string>
+    <string name="save">ذخیره</string>
+    <string name="cancel">لغو</string>
+    <string name="delete">حذف</string>
+    <string name="edit">ویرایش</string>
+    <string name="rename">تغییر نام</string>
+    <string name="close">بستن</string>
+    <string name="undo">بازگردانی</string>
+
+    <string name="empty_pins">هنوز پینی ندارید. با دکمهٔ «افزودن پین» شروع کنید.</string>
+    <string name="empty_search">نتیجه‌ای یافت نشد.</string>
+    <string name="empty_pins_keyboard">پینی برای نمایش نیست.</string>
+    <string name="enable_keyboard">فعال‌سازی کیبورد در تنظیمات</string>
+
+    <string name="error_title_required">عنوان را وارد کنید</string>
+    <string name="error_content_required">متن را وارد کنید</string>
+    <string name="error_name_required">نام را وارد کنید</string>
+    <string name="error_open_settings">باز کردن تنظیمات ممکن نشد</string>
+
+    <string name="key_abc">ABC</string>
+    <string name="key_space">فاصله</string>
+    <string name="key_backspace">حذف</string>
+    <string name="key_enter">تأیید</string>
+    <string name="switch_keyboard">تعویض کیبورد</string>
+
+    <string name="cd_pin_item">پین %1$s، %2$s</string>
 </resources>

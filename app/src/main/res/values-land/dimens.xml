@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="keyboard_list_height">120dp</dimen>
+    <integer name="keyboard_span_count">4</integer>
+</resources>
