@@ -43,6 +43,8 @@ android {
     }
 
     lint {
+        textReport true
+        textOutput file('stdout')
         warningsAsErrors false
         abortOnError true
         checkDependencies true
