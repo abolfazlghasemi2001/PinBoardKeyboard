@@ -10,6 +10,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: write
+
 jobs:
   verify:
     name: Lint, test and build
@@ -49,12 +52,11 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          report=app/build/reports/lint-results-debug.txt
-          [ -f "$report" ] || report=$(find app/build/reports -name 'lint-results-debug*' | head -1)
-          body=$(head -c 60000 "$report" 2>/dev/null || echo 'no lint report produced')
-          printf '%s' "$body" > /tmp/body.txt
+          report=$(find app/build/reports -name 'lint-results-debug.txt' | head -1)
+          if [ -z "$report" ]; then echo "no lint report"; exit 0; fi
+          head -c 50000 "$report" > /tmp/body.txt
           gh api --method POST "repos/${GITHUB_REPOSITORY}/commits/${GITHUB_SHA}/comments" \
-            -f body="$(printf '```\n%s\n```' "$(cat /tmp/body.txt)")"
+            --field body=@/tmp/body.txt || cat /tmp/body.txt
 
       - name: Build debug APK
         run: ./gradlew assembleDebug --stacktrace
