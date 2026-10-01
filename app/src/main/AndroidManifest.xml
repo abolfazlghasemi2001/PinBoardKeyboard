@@ -23,12 +23,16 @@
             </intent-filter>
         </activity>
 
+        <!--
+            No android:theme here on purpose: an IME window never picks it up (the platform
+            always starts from Theme.DeviceDefault.InputMethod). PinBoardIME applies
+            Theme.PinBoardKeyboard.Ime through a ContextThemeWrapper when it inflates its views.
+        -->
         <service
             android:name=".ime.PinBoardIME"
             android:exported="true"
             android:label="@string/ime_name"
-            android:permission="android.permission.BIND_INPUT_METHOD"
-            android:theme="@style/Theme.PinBoardKeyboard.Ime">
+            android:permission="android.permission.BIND_INPUT_METHOD">
             <intent-filter>
                 <action android:name="android.view.InputMethod" />
             </intent-filter>

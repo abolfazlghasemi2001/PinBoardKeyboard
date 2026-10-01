@@ -56,5 +56,7 @@
     <string name="key_enter">Enter</string>
     <string name="switch_keyboard">Switch keyboard</string>
 
+    <string name="ime_load_error">The keyboard could not be shown. Tap to switch keyboards.</string>
+
     <string name="cd_pin_item">Pin %1$s, %2$s</string>
 </resources>

@@ -56,5 +56,7 @@
     <string name="key_enter">تأیید</string>
     <string name="switch_keyboard">تعویض کیبورد</string>
 
+    <string name="ime_load_error">نمایش کیبورد ممکن نشد. برای تعویض کیبورد ضربه بزنید.</string>
+
     <string name="cd_pin_item">پین %1$s، %2$s</string>
 </resources>
