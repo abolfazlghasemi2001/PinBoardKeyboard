@@ -8,8 +8,12 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
-    <!-- Keyboards must not use a NoActionBar app theme; this one only carries colours. -->
-    <style name="Theme.PinBoardKeyboard.Ime" parent="Theme.Material3.DayNight">
+    <!--
+        Inflation theme for the IME. A Service context ignores android:theme and defaults to
+        Theme.DeviceDefault.InputMethod, so PinBoardIME wraps itself in a ContextThemeWrapper
+        using this theme before inflating any Material component.
+    -->
+    <style name="Theme.PinBoardKeyboard.Ime" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/md_theme_primary</item>
         <item name="colorOnPrimary">@color/md_theme_on_primary</item>
     </style>
