@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   verify:
@@ -44,19 +44,7 @@ jobs:
         run: ./gradlew testDebugUnitTest --stacktrace
 
       - name: Android Lint
-        id: lint
         run: ./gradlew lintDebug --stacktrace
-
-      - name: Publish lint report on failure
-        if: failure() && steps.lint.outcome == 'failure'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          report=$(find app/build/reports -name 'lint-results-debug.txt' | head -1)
-          if [ -z "$report" ]; then echo "no lint report"; exit 0; fi
-          head -c 50000 "$report" > /tmp/body.txt
-          gh api --method POST "repos/${GITHUB_REPOSITORY}/commits/${GITHUB_SHA}/comments" \
-            --field body=@/tmp/body.txt || cat /tmp/body.txt
 
       - name: Build debug APK
         run: ./gradlew assembleDebug --stacktrace
