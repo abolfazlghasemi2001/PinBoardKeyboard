@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Pins may contain secrets; never let them leave the device via auto backup. -->
+    <exclude domain="sharedpref" path="pin_db_secure.xml" />
+    <exclude domain="sharedpref" path="pin_db_v2.xml" />
+    <exclude domain="sharedpref" path="pin_db.xml" />
+</full-backup-content>

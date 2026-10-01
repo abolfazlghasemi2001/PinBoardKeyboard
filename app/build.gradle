@@ -1,6 +1,6 @@
 plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
@@ -11,13 +11,24 @@ android {
         applicationId 'com.example.pinboardkeyboard'
         minSdk 23
         targetSdk 35
-        versionCode 1
-        versionName '1.0'
+        versionCode 2
+        versionName '2.0'
+        resourceConfigurations += ['fa', 'en']
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+
+    buildFeatures {
+        viewBinding true
     }
 
     buildTypes {
+        debug {
+            applicationIdSuffix '.debug'
+            versionNameSuffix '-debug'
+        }
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -30,12 +41,37 @@ android {
     kotlinOptions {
         jvmTarget = '17'
     }
+
+    lint {
+        textReport true
+        textOutput file("$buildDir/reports/lint-results-debug.txt")
+        warningsAsErrors false
+        abortOnError true
+        checkDependencies true
+        disable += ['GradleDependency', 'AndroidGradlePluginVersion']
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
+    packaging {
+        resources.excludes += ['META-INF/{AL2.0,LGPL2.1}']
+    }
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:1.15.0'
-    implementation 'androidx.appcompat:appcompat:1.7.0'
-    implementation 'com.google.android.material:material:1.12.0'
-    implementation 'androidx.recyclerview:recyclerview:1.3.2'
-    implementation 'com.google.code.gson:gson:2.11.0'
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.activity.ktx
+    implementation libs.androidx.recyclerview
+    implementation libs.androidx.lifecycle.runtime.ktx
+    implementation libs.androidx.lifecycle.viewmodel.ktx
+    implementation libs.androidx.security.crypto
+    implementation libs.google.material
+    implementation libs.gson
+    implementation libs.kotlinx.coroutines.android
+
+    testImplementation libs.junit
+    testImplementation libs.kotlinx.coroutines.test
 }

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PinBoard</string>
+    <string name="ime_name">PinBoard Keyboard</string>
+
+    <string name="search_hint">Search pins</string>
+    <string name="category">Category</string>
+    <string name="category_all">All</string>
+    <string name="category_none">Uncategorised</string>
+    <string name="category_name_hint">e.g. Work, Personal, Medical</string>
+
+    <string name="add_pin">Add pin</string>
+    <string name="edit_pin">Edit pin</string>
+    <string name="delete_pin">Delete pin</string>
+    <string name="delete_pin_message">Delete “%1$s”?</string>
+    <string name="pin_deleted">“%1$s” deleted</string>
+    <string name="pin_title_hint">Pin title</string>
+    <string name="pin_content_hint">Pin text</string>
+    <string name="pin_to_top">Pin to top</string>
+
+    <string name="manage">Manage</string>
+    <string name="manage_categories">Manage categories</string>
+    <string name="add_category">Add category</string>
+    <string name="rename_category">Rename category</string>
+    <string name="delete_category">Delete category</string>
+    <string name="delete_category_message">Delete “%1$s”? Its pins are kept and become uncategorised.</string>
+
+    <string name="sort_title">Sort</string>
+    <string name="sort_recent">Most recent</string>
+    <string name="sort_most_used">Most used</string>
+    <string name="sort_alphabetical">Alphabetical</string>
+
+    <string name="action_pin">Pin to top</string>
+    <string name="action_unpin">Unpin</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="rename">Rename</string>
+    <string name="close">Close</string>
+    <string name="undo">Undo</string>
+
+    <string name="empty_pins">No pins yet. Tap “Add pin” to create one.</string>
+    <string name="empty_search">No matches found.</string>
+    <string name="empty_pins_keyboard">Nothing to show here.</string>
+    <string name="enable_keyboard">Enable keyboard in settings</string>
+
+    <string name="error_title_required">Title is required</string>
+    <string name="error_content_required">Text is required</string>
+    <string name="error_name_required">Name is required</string>
+    <string name="error_open_settings">Could not open settings</string>
+
+    <string name="key_abc">ABC</string>
+    <string name="key_space">Space</string>
+    <string name="key_backspace">Backspace</string>
+    <string name="key_enter">Enter</string>
+    <string name="switch_keyboard">Switch keyboard</string>
+
+    <string name="cd_pin_item">Pin %1$s, %2$s</string>
+</resources>
